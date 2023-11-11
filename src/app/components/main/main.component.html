@@ -1,0 +1,11 @@
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+  <div class="profile">
+    <img [src]="photo" alt="foto de perfil">
+    <a href="" class="navbar navbar-brand">{{name}}..</a>
+  </div>
+
+  <form class="form-inline">
+    <button class="btn btn-danger my-2 my-sm-0" type="submit" (click)="showData()">Traer data</button>
+    <button class="btn btn-danger my-2 my-sm-0" type="submit" (click)="logOut()">Cerrar Sesion</button>
+  </form>
+</nav>
