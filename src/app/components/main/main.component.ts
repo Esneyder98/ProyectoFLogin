@@ -24,12 +24,10 @@ export class MainComponent implements OnInit, OnDestroy {
     this.photo = '';
     this.subscription = this.perfilDataService.getName()
       .subscribe(name => {
-        console.log('Nombre recibido en Main:', name);
         this.name = name;
       });
       this.subscription = this.perfilDataService.getPhoto()
       .subscribe(photo => {
-        console.log('Nombre recibido en Main:', photo)
         this.photo = photo;
       });
   }

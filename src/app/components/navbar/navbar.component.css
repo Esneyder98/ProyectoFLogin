@@ -1,0 +1,16 @@
+nav .nav-link a i{
+  color: #ffffff;
+  padding:2px;
+}
+
+nav .profile{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+nav .profile img{
+  border: 1px solid none;
+  border-radius: 50%;
+  width: 60px;
+}
