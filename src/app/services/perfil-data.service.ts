@@ -15,7 +15,6 @@ export class PerfilDataService {
     this.photo = "";
   }
   agregarDatos(perfil: any) {
-    console.log('Datos agregados en PerfilDataService:', perfil);
     if (perfil && perfil.name && perfil.photo) {
       this.name = perfil.name;
       this.photo = perfil.photo;
