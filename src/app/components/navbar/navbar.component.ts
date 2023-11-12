@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
   subscription!: Subscription;
   name: string;
   photo: string;
-
+  photoDefault: string = '../../../assets/img/profile_default.png'
   constructor(
     private authGoogleService: AuthGoogleService,
     private router: Router,
@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
       .subscribe(photo => {
         this.photo = photo;
       });
+
   }
 
 async ngOnInit() {
@@ -73,7 +74,8 @@ private async waitForInitialization(): Promise<void> {
 
         if (parseData) {
           this.name = parseData.name;
-          this.photo = parseData.picture;
+           // Verificar si la foto es válida y asignar un valor predeterminado si no lo es
+          this.photo = parseData.picture || this.photoDefault;
 
           const perfil = {
             name: this.name,

@@ -1,0 +1,18 @@
+.container{
+  margin-top: 25px
+}
+.container h1{
+  margin: 2px 2px 15px 2px;
+  padding: 4px;
+}
+.invalid-tooltip {
+  display: block;
+
+}
+
+.inputInvalid{
+  border: 1px solid #dc3545
+}
+.success{
+  border: 2px solid #28a745;
+}

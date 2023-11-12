@@ -1,5 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { SwalComponent } from '@sweetalert2/ngx-sweetalert2';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,8 +29,12 @@ import { ProductListComponent } from './components/products/product-list/product
     AppRoutingModule,
     OAuthModule.forRoot(),
     HttpClientModule,
+    FormsModule,
+    SweetAlert2Module.forRoot(),
   ],
-  providers: [],
+  providers: [
+    SwalComponent,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

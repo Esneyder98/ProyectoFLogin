@@ -1,2 +1,79 @@
 <app-navbar></app-navbar>
-<p>product-create works!</p>
+<div class="container m-10">
+  <h1>Agrega tus productos al inventario</h1>
+  <form class="needs-validation" (submit)="onSubmit($event)">
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="nombre">Nombre</label>
+        <input [(ngModel)]="nombre" type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre" [ngClass]="{'inputInvalid':nombreValido==false,'success':nombreValido==true}">
+        <p *ngIf="nombreValido==false" class="invalid-tooltip">
+          Por favor, ingresa un nombre válido.
+        </p>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="descripcion">Descripción</label>
+        <input [(ngModel)]="descripcion" type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" [ngClass]="{'inputInvalid':descripcionValido==false,'success':descripcionValido==true}">
+        <p *ngIf="descripcionValido == false" class="invalid-tooltip">
+          Por favor, ingresa una descripción válida.
+        </p>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="cantidad">Cantidad</label>
+        <input [(ngModel)]="cantidad" type="number" class="form-control" id="cantidad"  name="cantidad" placeholder="Cantidad" [ngClass]="{'inputInvalid':cantidadValido==false,'success':cantidadValido==true}">
+        <div *ngIf="cantidadValido == false" class="invalid-tooltip">
+          Por favor, ingresa una cantidad válida.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="precio">Precio</label>
+        <input [(ngModel)]="precio" type="number" class="form-control" id="precio" name="precio" placeholder="Precio" [ngClass]="{'inputInvalid':precioValido==false,'success':precioValido==true}">
+        <div *ngIf="precioValido == false" class="invalid-tooltip">
+          Por favor, ingresa un precio válido.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="ubicacion">Ubicación</label>
+        <input [(ngModel)]="ubicacion" type="text" class="form-control" id="ubicacion" name="ubicacion" placeholder="Gongola 1 fila 3" [ngClass]="{'inputInvalid':ubicacionValido==false,'success':ubicacionValido==true}">
+        <div *ngIf="ubicacionValido == false" class="invalid-tooltip">
+          Por favor, ingresa una ubicación válida.
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="fechaIngreso">Fecha de ingreso</label>
+        <input [(ngModel)]="fechaIngreso" type="date" class="form-control" id="fechaIngreso" name="fechaIngreso" placeholder="Fecha de ingreso" [ngClass]="{'inputInvalid':fechaIngresoValido==false,'success':fechaIngresoValido==true}">
+        <div *ngIf="fechaIngresoValido == false" class="invalid-tooltip">
+          Por favor, ingresa una fecha de ingreso válida.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="fechaVencimiento">Fecha de vencimiento</label>
+        <input [(ngModel)]="fechaVencimiento" type="date" class="form-control" id="fechaVencimiento" name="fechaVencimiento" [ngClass]="{'inputInvalid':fechaVencimientoValido==false,'success':fechaVencimientoValido==true}">
+        <div *ngIf="fechaVencimientoValido == false" class="invalid-tooltip">
+          Por favor, ingresa una fecha de vencimiento válida.
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="stockMinimo">Stock mínimo</label>
+        <input [(ngModel)]="stockMinimo" type="number" class="form-control" id="stockMinimo" name="stockMinimo" placeholder="Stock mínimo" [ngClass]="{'inputInvalid':stockMinimoValido==false,'success':stockMinimoValido==true}">
+        <div *ngIf="stockMinimoValido == false" class="invalid-tooltip">
+          Por favor, ingresa un stock mínimo válido.
+        </div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="stockMaximo">Stock máximo</label>
+        <input [(ngModel)]="stockMaximo" type="number" class="form-control" id="stockMaximo" name="stockMaximo" placeholder="Stock máximo" [ngClass]="{'inputInvalid':stockMaximoValido == false,'success':stockMaximoValido == true}">
+        <div *ngIf="stockMaximoValido == false" class="invalid-tooltip">
+          Por favor, ingresa un stock máximo válido.
+        </div>
+      </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Agregar Productos</button>
+  </form>
+</div>
+
