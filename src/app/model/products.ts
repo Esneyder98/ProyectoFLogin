@@ -5,9 +5,10 @@ export class Product {
   precio: number;
   ubicacion: string;
   fechaIngreso: Date;
-  fechaVencimiento: Date  | null;
+  fechaVencimiento: Date | null;
   stockMinimo: number;
   stockMaximo: number;
+  imageURL: string;  // Add this line for imageURL property
 
   constructor(
     nombre: string,
@@ -16,9 +17,10 @@ export class Product {
     precio: number,
     ubicacion: string,
     fechaIngreso: Date,
-    fechaVencimiento: Date,
+    fechaVencimiento: Date | null,
     stockMinimo: number,
-    stockMaximo: number
+    stockMaximo: number,
+    imageURL: string  // Add this line for imageURL property
   ) {
     this.nombre = nombre;
     this.descripcion = descripcion;
@@ -29,5 +31,6 @@ export class Product {
     this.fechaVencimiento = fechaVencimiento;
     this.stockMinimo = stockMinimo;
     this.stockMaximo = stockMaximo;
+    this.imageURL = imageURL;  // Add this line for imageURL property
   }
 }

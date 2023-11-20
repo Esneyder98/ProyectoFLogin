@@ -73,6 +73,15 @@
         </div>
       </div>
     </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="imageURL">URL de la Imagen</label>
+        <input [(ngModel)]="imageURL" type="text" class="form-control" id="imageURL" name="imageURL" placeholder="URL de la Imagen" [ngClass]="{'inputInvalid': imageURLvalido == false, 'success': imageURLvalido == true}">
+        <p *ngIf="imageURLvalido == false" class="invalid-tooltip">
+          Por favor, ingresa una URL de imagen válida.
+        </p>
+      </div>
+    </div>
     <button class="btn btn-primary" type="submit">Agregar Productos</button>
   </form>
 </div>

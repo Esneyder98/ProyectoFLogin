@@ -27,8 +27,10 @@ export class ProductService {
     }
   }
 
-  delete(index: number) {
-    if (index >= 0 && index < this.products.length) {
+  delete(nombre: string) {
+    const index = this.products.findIndex(product => product.nombre === nombre);
+  
+    if (index !== -1) {
       this.products.splice(index, 1);
       this.updateProductsSubject();
     }
@@ -36,6 +38,11 @@ export class ProductService {
 
   getAll(): Product[] {
     return this.products;
+  }
+  setAll(products: Product[]): void {
+    this.products = products;
+    this.updateProductsSubject();
+    console.log('Products set in service:', this.products);
   }
 
   private updateProductsSubject() {

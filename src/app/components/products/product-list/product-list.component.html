@@ -1,11 +1,27 @@
 <app-navbar></app-navbar>
 
-<ul *ngIf="productList.length > 0; else listaVacia">
-  <li *ngFor="let producto of productList">{{ producto.nombre }} - {{ producto.precio }}</li>
-</ul>
+<input type="checkbox" (change)="onCheckboxChange($event)" />
+<label for="loadDummyProducts">Cargar Productos de Prueba</label>
+
+<div *ngIf="productList.length > 0; else listaVacia" class="card-container">
+  <div *ngFor="let producto of productList" class="card">
+    <div class="card-image">
+      <img [src]="producto.imageURL" alt="{{ producto.nombre }} Thumbnail" class="card-thumbnail" />
+    </div>   
+    <div class="card-body">
+      <h5 class="card-title">{{ producto.nombre }}</h5>
+      <p class="card-text">{{ producto.descripcion }}</p>
+      <p class="card-text">Precio: {{ producto.precio }}</p>
+      <label for="quantity">Cantidad:</label>
+      <input type="number" id="quantity" name="quantity" [(ngModel)]="producto.cantidad" min="1" step="1">
+    </div>
+    <div class="card-buttons">     
+      <button (click)="updateQuantity(producto)" class="btn btn-primary">Actualizar</button>
+      <button (click)="deleteProduct(producto.nombre)" class="btn btn-danger">Eliminar</button>
+    </div>
+  </div>
+</div>
 
 <ng-template #listaVacia>
-  <p>No hay productos en el  inventario</p>
+  <p>No hay productos en el inventario</p>
 </ng-template>
-
-

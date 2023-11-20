@@ -17,6 +17,7 @@ export class ProductCreateComponent {
   fechaVencimiento: Date  | null;
   stockMinimo: number;
   stockMaximo: number;
+  imageURL: string;
 
     // Variables de validación
   nombreValido!: boolean | null;
@@ -28,6 +29,7 @@ export class ProductCreateComponent {
   fechaVencimientoValido!: boolean | null;
   stockMinimoValido!: boolean | null;
   stockMaximoValido!: boolean | null;
+  imageURLvalido!: boolean | null;
 
   constructor(
     private productService: ProductService){
@@ -40,6 +42,7 @@ export class ProductCreateComponent {
     this.fechaVencimiento = null;
     this.stockMinimo = 0;
     this.stockMaximo = 0;
+    this.imageURL = "";
   }
 
   validarCampos(){
@@ -52,6 +55,7 @@ export class ProductCreateComponent {
     this.fechaVencimiento == null ? (this.fechaVencimientoValido = false) : (this.fechaVencimientoValido = true);
     this.stockMinimo == 0 ? (this.stockMinimoValido = false) : (this.stockMinimoValido = true);
     this.stockMaximo == 0 ? (this.stockMaximoValido = false) : (this.stockMaximoValido = true);
+    this.imageURL == '' ? (this.imageURLvalido = false) : (this.imageURLvalido = true);
   }
 
   //creacion de productos
@@ -62,7 +66,7 @@ export class ProductCreateComponent {
     if (!this.nombre || !this.descripcion || !this.cantidad || !this.precio || !this.ubicacion || !this.fechaIngreso || !this.fechaVencimiento || !this.stockMinimo || !this.stockMaximo) {
       return;
     }
-    const newProduct: Product = {
+    const newProduct: Product = {     
       nombre: this.nombre,
       descripcion: this.descripcion,
       cantidad: this.cantidad,
@@ -72,6 +76,7 @@ export class ProductCreateComponent {
       fechaVencimiento: this.fechaVencimiento,
       stockMinimo: this.stockMinimo,
       stockMaximo: this.stockMaximo,
+      imageURL: this.imageURL,
     };
     // Lógica para manejar el envío del formulario
     this.productService.create(newProduct);
@@ -97,6 +102,7 @@ export class ProductCreateComponent {
     this.fechaVencimiento = null;
     this.stockMinimo = 0;
     this.stockMaximo = 0;
+    this.imageURL = "";
     //reseteo validaciones
     this.nombreValido = null
     this.descripcionValido = null
@@ -107,5 +113,6 @@ export class ProductCreateComponent {
     this.fechaVencimientoValido = null
     this.stockMinimoValido = null
     this.stockMaximoValido = null
+    this.imageURLvalido = null
   }
 }

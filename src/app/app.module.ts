@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductCreateComponent } from './components/products/product-create/product-create.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductService } from './services/product.service';
+import { ProductospruebaService } from './services/productosprueba.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,12 @@ import { ProductListComponent } from './components/products/product-list/product
     HttpClientModule,
     FormsModule,
     SweetAlert2Module.forRoot(),
+    BrowserAnimationsModule,
   ],
   providers: [
     SwalComponent,
+    ProductService, 
+    ProductospruebaService,
   ],
   bootstrap: [AppComponent]
 })
