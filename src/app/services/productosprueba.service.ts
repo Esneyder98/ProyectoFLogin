@@ -62,7 +62,7 @@ export class ProductospruebaService {
   fechaVencimiento: new Date('2023-12-01'),
   stockMinimo: 10,
   stockMaximo: 30,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://supermercadocomunal.com/verbenal/1957-large_default/leche-colanta-entera-11-lt.jpg'
 },
 { 
   nombre: 'Pan Integral',
@@ -74,7 +74,7 @@ export class ProductospruebaService {
   fechaVencimiento: new Date('2023-11-25'),
   stockMinimo: 15,
   stockMaximo: 50,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://s1.eestatic.com/2023/06/14/cocinillas/recetas/771433771_233955142_1706x960.jpg'
 },
 { 
   nombre: 'Detergente',
@@ -86,7 +86,7 @@ export class ProductospruebaService {
   fechaVencimiento: null,
   stockMinimo: 8,
   stockMaximo: 25,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://lavaquita.co/cdn/shop/products/supermercados_la_vaquita_supervaquita_detergente_3d_1000gr_cuidado_de_la_ropa_700x700.jpg?v=1620655040'
 },
 { 
   nombre: 'Huevos',
@@ -98,7 +98,7 @@ export class ProductospruebaService {
   fechaVencimiento: new Date('2023-11-22'),
   stockMinimo: 5,
   stockMaximo: 20,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://www.comercialgarciagonzalez.es/wp-content/uploads/huevos-12-unidades.jpg'
 },
 { 
   nombre: 'Arroz',
@@ -110,7 +110,7 @@ export class ProductospruebaService {
   fechaVencimiento: new Date('2024-01-01'),
   stockMinimo: 5,
   stockMaximo: 25,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://panalk.com/cdn/shop/products/ARROZ_BLANCO_PRIMOR_1_KG_600x.png'
 },
 { 
   nombre: 'Manzanas',
@@ -122,7 +122,7 @@ export class ProductospruebaService {
   fechaVencimiento: new Date('2023-11-30'),
   stockMinimo: 3,
   stockMaximo: 15,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://mesfrescquemai.com/247-home_default/manzana-golden-1kg.jpg'
 },
 { 
   nombre: 'Pasta',
@@ -134,7 +134,7 @@ export class ProductospruebaService {
   fechaVencimiento: new Date('2023-12-15'),
   stockMinimo: 8,
   stockMaximo: 30,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://lavaquita.co/cdn/shop/products/supermercados_la_vaquita_supervaquita_monticello_pasta_fusilli_500g_600x600.jpg'
 },
 { 
   nombre: 'Jabón de Baño',
@@ -146,7 +146,7 @@ export class ProductospruebaService {
   fechaVencimiento: null,
   stockMinimo: 10,
   stockMaximo: 35,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://co.loccitane.com/cdn/shop/files/jabon-karite-lavanda-l-occitane-colombia-1_1800x1800.png'
 },
 { 
   nombre: 'Aceite de Oliva',
@@ -158,7 +158,7 @@ export class ProductospruebaService {
   fechaVencimiento: new Date('2024-02-01'),
   stockMinimo: 3,
   stockMaximo: 15,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://exitocol.vtexassets.com/arquivos/ids/5754952/Aceite-De-Oliva-Extravirgen-750-ml-108701_a.jpg'
 },
 { 
   nombre: 'Cereal Integral',
@@ -170,7 +170,7 @@ export class ProductospruebaService {
   fechaVencimiento: new Date('2023-12-15'),
   stockMinimo: 5,
   stockMaximo: 20,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://www.tutrebol.es/100202-large_default/cereales-integrales-c-chocolate-alteza-350-gr.jpg'
 },
 { 
   nombre: 'Queso Gouda',
@@ -182,7 +182,7 @@ export class ProductospruebaService {
   fechaVencimiento: new Date('2023-12-10'),
   stockMinimo: 2,
   stockMaximo: 10,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://www.arflina.com/ProductoImagen/gp2030/4562.jpg'
 },
 { 
   nombre: 'Papel Higiénico',
@@ -194,7 +194,7 @@ export class ProductospruebaService {
   fechaVencimiento: null,
   stockMinimo: 7,
   stockMaximo: 25,
-  imageURL: 'https://www.todoaseo.com/wp-content/uploads/2017/01/lavaloza-850.jpg'
+  imageURL: 'https://detalshop.com/cdn/shop/products/010989.jpg'
 },
 ]
  
