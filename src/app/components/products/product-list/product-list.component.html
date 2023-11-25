@@ -1,5 +1,12 @@
 <app-navbar></app-navbar>
 
+<div class="div">
+  <mat-form-field>
+    <mat-label>Buscar</mat-label>
+    <input matInput (keyup)="filter($event)" placeholder="Buscar">
+  </mat-form-field>
+</div>
+
 <input type="checkbox" (change)="onCheckboxChange($event)" />
 <label for="loadDummyProducts">Cargar Productos de Prueba</label>
 

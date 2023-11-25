@@ -17,6 +17,9 @@ import { ProductListComponent } from './components/products/product-list/product
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductService } from './services/product.service';
 import { ProductospruebaService } from './services/productosprueba.service';
+import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,7 @@ import { ProductospruebaService } from './services/productosprueba.service';
     MainComponent,
     NavbarComponent,
     ProductCreateComponent,
-    ProductListComponent
+    ProductListComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,9 @@ import { ProductospruebaService } from './services/productosprueba.service';
     FormsModule,
     SweetAlert2Module.forRoot(),
     BrowserAnimationsModule,
+    AngularMaterialModule
+    
+
   ],
   providers: [
     SwalComponent,
