@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/model/products';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
@@ -18,7 +19,7 @@ export class ProductCreateComponent {
   stockMinimo: number;
   stockMaximo: number;
   imageURL: string;
-
+  imageProductDefault = "../../assets/img/product_default.png"
     // Variables de validación
   nombreValido!: boolean | null;
   descripcionValido!: boolean | null;
@@ -32,7 +33,8 @@ export class ProductCreateComponent {
   imageURLvalido!: boolean | null;
 
   constructor(
-    private productService: ProductService){
+    private productService: ProductService,
+    private router: Router,){
     this.nombre = "";
     this.descripcion="";
     this.cantidad = 0;
@@ -66,7 +68,7 @@ export class ProductCreateComponent {
     if (!this.nombre || !this.descripcion || !this.cantidad || !this.precio || !this.ubicacion || !this.fechaIngreso || !this.fechaVencimiento || !this.stockMinimo || !this.stockMaximo) {
       return;
     }
-    const newProduct: Product = {     
+    const newProduct: Product = {
       nombre: this.nombre,
       descripcion: this.descripcion,
       cantidad: this.cantidad,
@@ -76,12 +78,13 @@ export class ProductCreateComponent {
       fechaVencimiento: this.fechaVencimiento,
       stockMinimo: this.stockMinimo,
       stockMaximo: this.stockMaximo,
-      imageURL: this.imageURL,
+      imageURL: this.imageURL!="" ? this.imageURL: this.imageProductDefault,
     };
     // Lógica para manejar el envío del formulario
     this.productService.create(newProduct);
     this.resetearCampos()
     this.showSuccessAlert()
+    this.router.navigate(['/list']);
   }
 
   showSuccessAlert() {

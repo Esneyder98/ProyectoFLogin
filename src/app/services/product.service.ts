@@ -14,7 +14,7 @@ export class ProductService {
   productos$: Observable<Product[]> = this.productsSubject.asObservable();
 
   create(product: Product) {
-    this.products.push(product);
+    this.products.unshift(product);
     console.log(this.products);
 
     this.updateProductsSubject();
@@ -29,7 +29,7 @@ export class ProductService {
 
   delete(nombre: string) {
     const index = this.products.findIndex(product => product.nombre === nombre);
-  
+
     if (index !== -1) {
       this.products.splice(index, 1);
       this.updateProductsSubject();
