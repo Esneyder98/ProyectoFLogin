@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="container m-10">
-  <h1>Agrega tus productos al inventario</h1>
+  <h1>{{accion}} tus productos</h1>
   <form class="needs-validation" (submit)="onSubmit($event)" autocomplete="off">
     <div class="form-row">
       <div class="col-md-6 mb-3">
@@ -80,9 +80,9 @@
         <p *ngIf="imageURLvalido == false" class="invalid-tooltip">
           Por favor, ingresa una URL de imagen válida.
         </p>
-      </div>
     </div>
-    <button class="btn btn-primary" type="submit">Agregar Productos</button>
+       </div>
+   <button class="btn btn-primary" type="submit">Agregar Producto</button>
   </form>
 </div>
 

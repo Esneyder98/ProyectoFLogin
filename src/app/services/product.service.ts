@@ -48,4 +48,12 @@ export class ProductService {
   private updateProductsSubject() {
     this.productsSubject.next([...this.products]);
   }
+
+  getByIndex(index: number): Product{
+    return this.products[index];
+  }
+
+  editarArticulo(producto:Product, idProducto:number){
+    this.products[idProducto] = {...producto}
+  }
 }

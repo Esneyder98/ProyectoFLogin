@@ -21,6 +21,7 @@ import { AngularMaterialModule } from './components/shared/angular-material/angu
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,12 +40,12 @@ import { AngularMaterialModule } from './components/shared/angular-material/angu
     SweetAlert2Module.forRoot(),
     BrowserAnimationsModule,
     AngularMaterialModule
-    
+
 
   ],
   providers: [
     SwalComponent,
-    ProductService, 
+    ProductService,
     ProductospruebaService,
   ],
   bootstrap: [AppComponent]

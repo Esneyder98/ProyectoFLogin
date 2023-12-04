@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { Product } from 'src/app/model/products';
 import Swal from 'sweetalert2';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
@@ -31,10 +31,14 @@ export class ProductCreateComponent {
   stockMinimoValido!: boolean | null;
   stockMaximoValido!: boolean | null;
   imageURLvalido!: boolean | null;
-
+  idArticulo:any;
+  accion = "Agregar"
+  fechaIngresoFormatted!:any;
+  fechaVencimientoFormatted!:any;
   constructor(
     private productService: ProductService,
-    private router: Router,){
+    private router: Router,
+    private oRoute: ActivatedRoute){
     this.nombre = "";
     this.descripcion="";
     this.cantidad = 0;
@@ -45,6 +49,17 @@ export class ProductCreateComponent {
     this.stockMinimo = 0;
     this.stockMaximo = 0;
     this.imageURL = "";
+    // se puede capturar el id del producto
+    this.idArticulo = this.oRoute.snapshot.params['id']
+  }
+
+  ngOnInit(){
+    if(this.idArticulo !== undefined){
+      this.accion = "Editar"
+    }else{
+      this.accion = "Agregar"
+    }
+    this.obtenerArticulo();
   }
 
   validarCampos(){
@@ -81,17 +96,25 @@ export class ProductCreateComponent {
       imageURL: this.imageURL!="" ? this.imageURL: this.imageProductDefault,
     };
     // Lógica para manejar el envío del formulario
-    this.productService.create(newProduct);
-    this.resetearCampos()
-    this.showSuccessAlert()
-    this.router.navigate(['/list']);
+    if(this.idArticulo !== undefined){
+      this.productService.editarArticulo(newProduct,this.idArticulo);
+      this.resetearCampos()
+      this.showSuccessAlert('¡Edición exitosa!','El producto se ha Actualizado correctamente.')
+      this.router.navigate(['/list']);
+    }else{
+      this.productService.create(newProduct);
+      this.resetearCampos()
+      this.showSuccessAlert('¡Registro exitoso!','El producto se ha registrado correctamente.')
+      this.router.navigate(['/list']);
+    }
+
   }
 
-  showSuccessAlert() {
+  showSuccessAlert(title:string,text:string) {
     Swal.fire({
       icon: 'success',
-      title: '¡Registro exitoso!',
-      text: 'El producto se ha registrado correctamente.',
+      title: title,
+      text: text,
     });
   }
 
@@ -117,5 +140,41 @@ export class ProductCreateComponent {
     this.stockMinimoValido = null
     this.stockMaximoValido = null
     this.imageURLvalido = null
+  }
+
+  obtenerArticulo(){
+    const articulo = this.productService.getByIndex(this.idArticulo);
+    this.nombre = articulo.nombre
+    this.descripcion= articulo.descripcion
+    this.cantidad = articulo.cantidad;
+    this.precio = articulo.precio;
+    this.ubicacion = articulo.ubicacion;
+    this.stockMinimo =articulo.stockMinimo;
+    this.stockMaximo =  articulo.stockMaximo;
+    this.imageURL = articulo.imageURL;
+
+     // Obtener las fechas
+    const fechaIngreso = articulo.fechaIngreso ? new Date(articulo.fechaIngreso) : new Date();
+    const fechaVencimiento = articulo.fechaVencimiento ? new Date(articulo.fechaVencimiento) : new Date(fechaIngreso.getFullYear() + 1, fechaIngreso.getMonth(), fechaIngreso.getDate());
+
+    // Formatear las fechas al formato 'dd/mm/yyyy'
+    this.fechaIngresoFormatted = this.formatDate(fechaIngreso);
+    this.fechaVencimientoFormatted = this.formatDate(fechaVencimiento);
+
+    // Asignar las fechas formateadas a las variables con ngModel
+    this.fechaIngreso = fechaIngreso;
+    this.fechaVencimiento = fechaVencimiento;
+  }
+
+  formatDate(date: Date): string {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+
+    // Agregar un cero delante del día o mes si son menores que 10
+    const formattedDay = (day < 10) ? `0${day}` : `${day}`;
+    const formattedMonth = (month < 10) ? `0${month}` : `${month}`;
+
+    return `${formattedDay}/${formattedMonth}/${year}`;
   }
 }
