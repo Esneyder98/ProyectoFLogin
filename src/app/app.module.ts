@@ -18,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProductService } from './services/product.service';
 import { ProductospruebaService } from './services/productosprueba.service';
 import { AngularMaterialModule } from './components/shared/angular-material/angular-material.module';
+import { ProductReportPdfComponent } from './components/products/product-report-pdf/product-report-pdf.component';
 
 
 
@@ -30,6 +31,7 @@ import { AngularMaterialModule } from './components/shared/angular-material/angu
     NavbarComponent,
     ProductCreateComponent,
     ProductListComponent,
+    ProductReportPdfComponent,
   ],
   imports: [
     BrowserModule,

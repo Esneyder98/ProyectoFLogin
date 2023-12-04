@@ -31,9 +31,17 @@
 }
 
 .card-buttons {
+  align-items: center;
   display: flex;
   justify-content: center;
   margin-top: 10px;
+}
+.card-buttons a{
+  text-decoration: none;
+  color: white;
+  background-color: #007bff;
+  padding: 9px;
+  border-radius: 4px;
 }
 .card-buttons button{
   margin: 5px;
